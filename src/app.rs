@@ -124,6 +124,7 @@ impl App {
     }
 
     /// Advances the scroll position based on elapsed time since last update.
+    /// Quits automatically when the last line scrolls out of view.
     pub fn update(&mut self) {
         if self.paused {
             self.last_update = Instant::now();
@@ -136,9 +137,15 @@ impl App {
 
         self.scroll_offset += self.speed * elapsed;
 
-        let max = self.max_scroll();
-        if self.scroll_offset > max {
-            self.scroll_offset = max;
+        let total_lines = if self.wrapped_lines.is_empty() {
+            self.lines.len()
+        } else {
+            self.wrapped_lines.len()
+        };
+
+        // Quit when the last line has scrolled out of view
+        if self.scroll_offset >= total_lines as f64 + self.visible_height as f64 {
+            self.should_quit = true;
         }
     }
 
