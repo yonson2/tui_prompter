@@ -68,4 +68,5 @@ clean:
 
 # Run tp with a test message
 demo:
-    @echo "Hello from tp!\n\nThis is a demo of the terminal teleprompter.\n\nPress 'q' to quit." | cargo run
+    #!/usr/bin/env bash
+    cargo run -- <(echo -e "Hello from tp!\n\nThis is a demo of the terminal teleprompter.\n\nPress 'q' to quit.")
