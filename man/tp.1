@@ -1,0 +1,38 @@
+.ie \n(.g .ds Aq \(aq
+.el .ds Aq '
+.TH tp 1  "tp 1.0.0" 
+.SH NAME
+tp \- A terminal\-based teleprompter application
+.SH SYNOPSIS
+\fBtp\fR [\fB\-s\fR|\fB\-\-speed\fR] [\fB\-S\fR|\fB\-\-scale\fR] [\fB\-c\fR|\fB\-\-color\fR] [\fB\-b\fR|\fB\-\-background\fR] [\fB\-p\fR|\fB\-\-padding\fR] [\fB\-h\fR|\fB\-\-help\fR] [\fB\-V\fR|\fB\-\-version\fR] [\fIFILE\fR] 
+.SH DESCRIPTION
+A terminal\-based teleprompter application
+.SH OPTIONS
+.TP
+\fB\-s\fR, \fB\-\-speed\fR \fI<SPEED>\fR
+Scroll speed (lines per second)
+.TP
+\fB\-S\fR, \fB\-\-scale\fR \fI<SCALE>\fR
+Font scale factor (1\-3)
+.TP
+\fB\-c\fR, \fB\-\-color\fR \fI<COLOR>\fR
+Text color (e.g., white, green, #FF0000)
+.TP
+\fB\-b\fR, \fB\-\-background\fR \fI<COLOR>\fR
+Background color (e.g., black, blue, #000033)
+.TP
+\fB\-p\fR, \fB\-\-padding\fR \fI<PERCENT>\fR
+Horizontal padding as percentage of screen width (0\-40)
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+Print help
+.TP
+\fB\-V\fR, \fB\-\-version\fR
+Print version
+.TP
+[\fIFILE\fR]
+Path to a text file to display
+.SH VERSION
+v1.0.0
+.SH AUTHORS
+Pedro Ramos
